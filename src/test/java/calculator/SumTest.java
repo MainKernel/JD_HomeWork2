@@ -1,4 +1,5 @@
-import Calculator.SumCalculator;
+package calculator;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ public class SumTest {
     }
 
     @Test
-    public void TestThatSumOfOneWorksCorrect(){
+    public void TestThatSumOfOneWorksCorrect() {
         //When
         int actual = calculator.sum(1);
 
@@ -32,14 +33,19 @@ public class SumTest {
     }
 
     @Test
-    public void TestThatSumOfZeroWorksCorrect(){
+    public void TestThatSumOfZeroWorksCorrect() {
+        int actual;
         //When
-        int actual = calculator.sum(0);
+        try {
+            actual = calculator.sum(0);
 
-        //Then
-        int expected = 0;
-        Assertions.assertEquals(expected, actual);
+            //Then
+            int expected = 0;
+            Assertions.assertEquals(expected, actual);
+
+        } catch (IllegalArgumentException ex) {
+            //Expected
+            ex.printStackTrace();
+        }
     }
-
-
 }

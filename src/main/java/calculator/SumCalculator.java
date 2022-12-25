@@ -1,7 +1,7 @@
-package Calculator;
+package calculator;
 
 public class SumCalculator{
-    public int sum(int number) {
+    public int sum(int number) throws IllegalArgumentException {
         if (number == 0) {
             throw new IllegalArgumentException();
         } else {
