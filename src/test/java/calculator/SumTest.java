@@ -9,12 +9,12 @@ public class SumTest {
     private SumCalculator calculator;
 
     @BeforeEach
-    public void BeforeEach() {
+    public void beforeEach() {
         calculator = new SumCalculator();
     }
 
     @Test
-    public void TestThatSumOfOneWorksCorrect() {
+    public void testThatSumOfOneWorksCorrect() {
         //When
         int actual = calculator.sum(1);
 
@@ -24,7 +24,7 @@ public class SumTest {
     }
 
     @Test
-    public void TestThatSumOfSixWorksCorrect() {
+    public void testThatSumOfSixWorksCorrect() {
         //When
         int actual = calculator.sum(3);
 
@@ -34,7 +34,7 @@ public class SumTest {
     }
 
     @Test
-    public void TestThatSumOfZeroWorksCorrect() {
+    public void testThatSumOfZeroWorksCorrect() {
         //When
         Executable actual = () -> calculator.sum(0);
 
