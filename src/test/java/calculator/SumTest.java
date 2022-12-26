@@ -3,6 +3,7 @@ package calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 public class SumTest {
     private SumCalculator calculator;
@@ -34,18 +35,11 @@ public class SumTest {
 
     @Test
     public void TestThatSumOfZeroWorksCorrect() {
-        int actual;
         //When
-        try {
-            actual = calculator.sum(0);
+        Executable actual = () -> calculator.sum(0);
 
-            //Then
-            int expected = 0;
-            Assertions.assertEquals(expected, actual);
-
-        } catch (IllegalArgumentException ex) {
-            //Expected
-            ex.printStackTrace();
-        }
+        //Then
+        Class<IllegalArgumentException> expected = IllegalArgumentException.class;
+        Assertions.assertThrows(expected, actual);
     }
 }
