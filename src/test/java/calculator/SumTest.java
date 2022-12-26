@@ -34,7 +34,7 @@ public class SumTest {
     }
 
     @Test
-    public void testThatSumOfZeroWorksCorrect() {
+    public void testThatSumOfZeroThrowsIllegalArgumentException() {
         //When
         Executable actual = () -> calculator.sum(0);
 
